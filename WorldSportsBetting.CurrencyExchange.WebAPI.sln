@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.WebAPI", "src\10 - Presentation\WorldSportsBetting.CurrencyExchange.WebAPI\WorldSportsBetting.CurrencyExchange.WebAPI.csproj", "{6BA3C0D3-E879-4C79-817F-BB21527F433D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Presentation", "10 - Presentation", "{C9BF6A44-7A3E-48BD-86AF-7E9578D03797}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Application", "20 - Application", "{420FFF07-3927-4384-A526-5EB0BF904A9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 - Domain", "30 - Domain", "{F42C2A9C-FF64-4A68-B240-C286AA436B75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 - Infrastructure", "40 - Infrastructure", "{4D04816B-2B7E-4C0B-AE78-60ED3EACAB66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 - Core", "50 - Core", "{3C7BB52A-BD35-4B3F-8187-57EE5D9CF235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60 - Test", "60 - Test", "{91CB8F25-8B16-4CF4-9D7C-45DBDBA92BEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.Application", "src\20 - Application\WorldSportsBetting.CurrencyExchange.Application\WorldSportsBetting.CurrencyExchange.Application.csproj", "{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.Domain", "src\30 - Domain\WorldSportsBetting.CurrencyExchange.Domain\WorldSportsBetting.CurrencyExchange.Domain.csproj", "{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.Infrastructure", "src\40 - Infrastructure\WorldSportsBetting.CurrencyExchange.Infrastructure\WorldSportsBetting.CurrencyExchange.Infrastructure.csproj", "{93192E56-7016-4B0D-B560-AA41E5EEA1D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.Core", "src\50 - Core\WorldSportsBetting.CurrencyExchange.Core\WorldSportsBetting.CurrencyExchange.Core.csproj", "{600E0EEB-A469-4BA5-BA17-A33FE32FF758}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.Test", "src\60 - Test\WorldSportsBetting.CurrencyExchange.Test\WorldSportsBetting.CurrencyExchange.Test.csproj", "{DDBC9B68-A800-4924-823F-BB3443A45394}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldSportsBetting.CurrencyExchange.MySql", "src\40 - Infrastructure\WorldSportsBetting.CurrencyExchange.MySql\WorldSportsBetting.CurrencyExchange.MySql.csproj", "{694946D9-854E-4509-85A9-3745F363AB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldSportsBetting.CurrencyExchange.Cache", "src\40 - Infrastructure\WorldSportsBetting.CurrencyExchange.Cache\WorldSportsBetting.CurrencyExchange.Cache.csproj", "{13130B7A-588A-4590-9172-74C87B8C98F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BA3C0D3-E879-4C79-817F-BB21527F433D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA3C0D3-E879-4C79-817F-BB21527F433D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA3C0D3-E879-4C79-817F-BB21527F433D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA3C0D3-E879-4C79-817F-BB21527F433D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93192E56-7016-4B0D-B560-AA41E5EEA1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93192E56-7016-4B0D-B560-AA41E5EEA1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93192E56-7016-4B0D-B560-AA41E5EEA1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93192E56-7016-4B0D-B560-AA41E5EEA1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600E0EEB-A469-4BA5-BA17-A33FE32FF758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600E0EEB-A469-4BA5-BA17-A33FE32FF758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600E0EEB-A469-4BA5-BA17-A33FE32FF758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600E0EEB-A469-4BA5-BA17-A33FE32FF758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBC9B68-A800-4924-823F-BB3443A45394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBC9B68-A800-4924-823F-BB3443A45394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBC9B68-A800-4924-823F-BB3443A45394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBC9B68-A800-4924-823F-BB3443A45394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694946D9-854E-4509-85A9-3745F363AB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694946D9-854E-4509-85A9-3745F363AB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694946D9-854E-4509-85A9-3745F363AB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694946D9-854E-4509-85A9-3745F363AB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13130B7A-588A-4590-9172-74C87B8C98F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13130B7A-588A-4590-9172-74C87B8C98F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13130B7A-588A-4590-9172-74C87B8C98F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13130B7A-588A-4590-9172-74C87B8C98F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BA3C0D3-E879-4C79-817F-BB21527F433D} = {C9BF6A44-7A3E-48BD-86AF-7E9578D03797}
+		{426DBE5B-FD3A-4F35-9AAA-FA93AC37D245} = {420FFF07-3927-4384-A526-5EB0BF904A9A}
+		{EB32B3A5-3190-48AC-8D5E-47E4FAA75CAB} = {F42C2A9C-FF64-4A68-B240-C286AA436B75}
+		{93192E56-7016-4B0D-B560-AA41E5EEA1D5} = {4D04816B-2B7E-4C0B-AE78-60ED3EACAB66}
+		{600E0EEB-A469-4BA5-BA17-A33FE32FF758} = {3C7BB52A-BD35-4B3F-8187-57EE5D9CF235}
+		{DDBC9B68-A800-4924-823F-BB3443A45394} = {91CB8F25-8B16-4CF4-9D7C-45DBDBA92BEC}
+		{694946D9-854E-4509-85A9-3745F363AB1B} = {4D04816B-2B7E-4C0B-AE78-60ED3EACAB66}
+		{13130B7A-588A-4590-9172-74C87B8C98F6} = {4D04816B-2B7E-4C0B-AE78-60ED3EACAB66}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F877341D-4F5E-478B-9891-DBDBE9F38F81}
+	EndGlobalSection
+EndGlobal
