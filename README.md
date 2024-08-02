@@ -4,9 +4,9 @@
 2. Restore all nuget packages - no custom packages.
 3. Run the following migrations scripts in the 'Package Manager Console' to get your database ready.
 4. Ensure the Default project is set to 'WorldSportsBetting.CurrencyExchange.MySql'.
-4.1 add-migration DbContextMigration000001.
-4.1 update-database.
-5. Run your solution in visual studio.
+5. add-migration DbContextMigration000001.
+6. update-database.
+7. Run your solution in visual studio.
 
 # Prerequisites
 
