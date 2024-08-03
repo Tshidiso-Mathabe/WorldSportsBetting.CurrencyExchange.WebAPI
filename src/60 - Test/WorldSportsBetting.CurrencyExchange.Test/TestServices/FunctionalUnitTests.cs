@@ -1,5 +1,6 @@
 using Moq;
 using Newtonsoft.Json;
+using WorldSportsBetting.CurrencyExchange.Core.Repositories;
 using WorldSportsBetting.CurrencyExchange.Core.Services;
 using WorldSportsBetting.CurrencyExchange.Domain.DataTransferObjects;
 
@@ -11,12 +12,14 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
         private readonly MockRepository _mockRepository;
 
         private readonly Mock<ICurrencyRatesService> _currencyRatesServiceMock;
+        private readonly Mock<IConversionHistoryRepository> _conversionHistoryRepository;
 
         public FunctionalUnitTests()
         {
             _mockRepository = new MockRepository(MockBehavior.Default);
 
             _currencyRatesServiceMock = _mockRepository.Create<ICurrencyRatesService>();
+            _conversionHistoryRepository = _mockRepository.Create<IConversionHistoryRepository>();
         }
 
         [TestMethod]
@@ -33,13 +36,15 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
                     Rates = new Dictionary<string, double> { ["TestCurrency"] = 1, ["TestCurrency1"] = 8.5, [targetCurrency] = 13, ["TestCurrency3"] = 5.1 }
                 };
             _currencyRatesServiceMock.Setup(x => x.GetLatestCurrencyRatesAsync(baseCurrency, default)).Returns(Task.FromResult(latestResponseDto));
-            ConvertService convertService = new(_currencyRatesServiceMock.Object);
+            _conversionHistoryRepository.Setup(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default)).Verifiable(Times.Once);
+            ConvertService convertService = new(_currencyRatesServiceMock.Object, _conversionHistoryRepository.Object);
 
             // Act
             CalcConvertResponseDto actualResult = await convertService.ConvertAsync(baseCurrency, targetCurrency, 13, default);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult.Result);
+            _conversionHistoryRepository.Verify(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default), Times.Once);
         }
 
         [TestMethod]
@@ -56,7 +61,8 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
                     Rates = new Dictionary<string, double> { ["TestCurrency"] = 1, ["TestCurrency1"] = 8.5, ["TestCurrency2"] = 13, ["TestCurrency3"] = 5.1 }
                 };
             _currencyRatesServiceMock.Setup(x => x.GetLatestCurrencyRatesAsync(baseCurrency, default)).Returns(Task.FromResult(latestResponseDto));
-            ConvertService convertService = new(_currencyRatesServiceMock.Object);
+            _conversionHistoryRepository.Setup(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default)).Verifiable(Times.Never);
+            ConvertService convertService = new(_currencyRatesServiceMock.Object, _conversionHistoryRepository.Object);
 
             // Act
             CalcConvertResponseDto actualResult = await convertService.ConvertAsync(baseCurrency, targetCurrency, 13, default);
@@ -64,6 +70,7 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
             // Assert
             Assert.IsFalse(actualResult.Success);
             Assert.AreEqual(expectedResult, actualResult.ErrorMessage);
+            _conversionHistoryRepository.Verify(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default), Times.Never);
         }
 
         [TestMethod]
@@ -81,7 +88,8 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
                 };
             string expectedErrorDetailsResult = JsonConvert.SerializeObject(latestResponseDto.ErrorDetails);
             _currencyRatesServiceMock.Setup(x => x.GetLatestCurrencyRatesAsync(baseCurrency, default)).Returns(Task.FromResult(latestResponseDto));
-            ConvertService convertService = new(_currencyRatesServiceMock.Object);
+            _conversionHistoryRepository.Setup(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default)).Verifiable(Times.Never);
+            ConvertService convertService = new(_currencyRatesServiceMock.Object, _conversionHistoryRepository.Object);
 
             // Act
             CalcConvertResponseDto actualResult = await convertService.ConvertAsync(baseCurrency, targetCurrency, 13, default);
@@ -89,6 +97,7 @@ namespace WorldSportsBetting.CurrencyExchange.Test.TestServices
             // Assert
             Assert.IsFalse(actualResult.Success);
             Assert.AreEqual(expectedErrorDetailsResult, actualResult.ErrorMessage);
+            _conversionHistoryRepository.Verify(x => x.AddAsync(It.IsAny<ConvertResponseDto>(), default), Times.Never);
         }
     }
 }

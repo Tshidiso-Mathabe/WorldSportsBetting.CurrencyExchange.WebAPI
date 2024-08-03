@@ -20,6 +20,6 @@ The appsettings.json file changes...
 
 - Change your AppId - 'OpenExchangeRatesAPI:AppId' (you will see ADD_YOUR_APP_ID_HERE).
 
-- Change your ConnectionString password 'MySQLConnectionString:WSBCurrencyExchange' (you will see ADD_YOUR_CONNECTION_STRING_PASSWORD_HERE), I doubt we are using the same MySQL server instance paswword. Also check the connection string an verify if it is pointing to an existing MySQL server database.
+- Change your ConnectionString password 'MySQLConnectionString:WSBCurrencyExchange' (you will see ADD_YOUR_CONNECTION_STRING_PASSWORD_HERE), I doubt we are using the same MySQL server instance password. Also check the connection string an verify if it is pointing to an existing MySQL server database.
 
 - Ensure Redis is pointing to the correct server
